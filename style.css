@@ -1,0 +1,53 @@
+ body {
+     text-align: justify;
+     overflow-x: hidden;
+ }
+
+
+ .banner {
+     height: 90vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-image: url("asset/banner.png");
+ }
+
+ h2 {
+     text-align: center;
+     color: blue
+ }
+
+ .services {
+     display: flex;
+     justify-content: space-evenly;
+     height: 70vh;
+ }
+
+ footer {
+     display: flex;
+     flex-direction: column;
+     color: white;
+     background-color: rgb(79, 79, 252);
+     justify-content: center;
+     align-items: center;
+ }
+
+ #contactForm {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     border: 1px solid #435adf;
+     box-shadow: 0.5px 0.5px 6px #9b83f1;
+     padding: 2rem;
+     border-radius: 5px;
+     width: 40%;
+ }
+
+ .form_content {
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     width: 100%;
+
+ }

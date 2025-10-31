@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Table</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            background-image: url("asset/banner.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .form {
+            border: 1px solid blue;
+            border-radius: 10px;
+            background-color: rgba(135, 207, 235, 0.4);
+            padding: 20px;
+        }
+
+        #tableData {
+            border: 1px solid rgba(0, 0, 255, 0.541);
+            background-color: rgba(135, 207, 235, 0.4);
+            border-radius: 5px;
+            width: 50%;
+        }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            border: 1px solid blue;
+            background-color: skyblue;
+            color: black;
+            border-radius: 5px;
+
+        }
+
+        table {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employee Table</h1>
+    <div class="form">
+        <form action="">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" name="age" id="age"></td>
+                </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td><input type="number" name="salary" id="salary"></td>
+                </tr>
+                <tr>
+                    <td>Department</td>
+                    <td><input type="text" id="department"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div id="update">
+        <button type="submit" onclick="addData()">Submit</button>
+    </div>
+    <table id="tableData" border="1" cellspacing="0" cellpadding="10px">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
