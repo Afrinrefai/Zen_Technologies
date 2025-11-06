@@ -10,25 +10,6 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <style>
-    #contactForm {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border: 1px solid #435adf;
-        box-shadow: 0.5px 0.5px 6px #9b83f1;
-        padding: 2rem;
-        border-radius: 5px;
-        width: 40%;
-    }
-
-    .form_content {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-
-    }
-
     a {
         text-decoration: none;
         color: white;
@@ -78,7 +59,7 @@
 
         <div class="container my-5">
             <section class="about" id="about">
-                <h2 class="mt-5">About Us</h2>
+                <h2 class="mt-5 ">About Us</h2>
                 <h5>Who We Are</h5>
                 At NovaTech Solutions, we’re passionate about helping businesses harness the power of technology to
                 achieve their goals. Founded in 2015, we’ve grown from a small startup into a trusted partner for
@@ -105,9 +86,10 @@
             </section>
 
             <h2 class="my-5" id="service">Services</h2>
-            <section class="services">
+            <section class="services row">
+                <div class="col col-sm-6 col-md-6 col-lg-4 my-2">
                 <div class="card" style="width: 18rem;">
-                    <img src="asset/UIUX_img.png" class="card-img-top" alt="...">
+                    <img src="asset/UIUX_img.png" class="card-img-top" alt="UI/UX Poster">
                     <div class="card-body">
                         <h5 class="card-title">UI/UX Designer</h5>
                         <p class="card-text">UI/UX design services typically include user research, wireframing,
@@ -115,8 +97,10 @@
                             digital products.</p>
                     </div>
                 </div>
+                </div>
+                <div class="col col-sm-6 col-md-6 col-lg-4 my-2">
                 <div class="card" style="width: 18rem;">
-                    <img src="asset/se.png" class="card-img-top" alt="...">
+                    <img src="asset/se.png" class="card-img-top" alt="Software Development Poster">
                     <div class="card-body">
                         <h5 class="card-title">Software Development</h5>
                         <p class="card-text">Software development services content includes custom software, web, and
@@ -124,8 +108,10 @@
                             system integration, and DevOps.</p>
                     </div>
                 </div>
+                </div>
+                <div class="col col-sm-6 col-md-6 col-lg-4 my-2">
                 <div class="card" style="width: 18rem;">
-                    <img src="asset/tas.png" class="card-img-top" alt="...">
+                    <img src="asset/tas.png" class="card-img-top" alt="Travel Automation Poster">
                     <div class="card-body">
                         <h5 class="card-title">Travel Automation</h5>
                         <p class="card-text">Travel automation system service content includes automated bookings,
@@ -133,38 +119,25 @@
                             management, compliance checks, and reporting.</p>
                     </div>
                 </div>
+                </div>
             </section>
         </div>
-        <section class="connect" id="contact">
+        <section class="connect my-5 w-100 ">
+            <h2 class="my-3">Contact Us</h2>
+            <div id="contact">
+                <input type="text" id="name" placeholder="Name" required>
+                <p id="nameAlert"></p>
+            
+                <input type="text" id="mail" placeholder="Email id" required>
+                <p id="mailAlert"></p>
+                
+                <input type="text" id="subject" placeholder="subject" required>
+                <p id="subjectAlert"></p>
+        
+                <textarea rows="5" cols="23" name="message" id="message" placeholder="Message"></textarea>
+                <p id="messageAlert"></p>
 
-            <div class="row my-4">
-                <h2>Contact Us</h2>
-                <div class="col-12 col-xs-12 col-sm-12 col-md-6 form_content">
-
-                    <div id="contactForm">
-                        <label for="name">Name</label>
-                        <input type="name" id="name" name="name" required>
-                        <p id="nameAlert"></p>
-
-                        <label for="email">Email</label>
-
-                        <input type="email" id="mail" name="email" required>
-                        <p id="mailAlert"></p>
-
-                        <label for="subject">Subject</label>
-
-                        <input type="text" id="subject" required>
-                        <p id="subjectAlert"></p>
-
-                        <label for="message">Message</label>
-
-                        <textarea name="message" id="message" rows="4" required></textarea>
-                        <p id="messageAlert"></p>
-                        <br>
-                        <button type="button" class="btn btn-primary" onclick="validate()">Submit</button>
-
-                    </div>
-                </div>
+                <button class="btn btn-primary" onclick="validate()">Submit</button>
             </div>
 
         </section>
@@ -181,73 +154,71 @@
         crossorigin="anonymous"></script>
 
     <script>
-        function validate() {
+       function validate(){
+        let name = document.getElementById("name").value.trim();
+        let mail = document.getElementById("mail").value.trim();
+        let subject = document.getElementById("subject").value.trim();
+        let message = document.getElementById("message").value.trim();
 
-            let name = document.getElementById('name').value.trim();
-            let mail = document.getElementById('mail').value.trim();
-            let subject = document.getElementById('subject').value.trim();
-            let message = document.getElementById('message').value.trim();
-            let nameAlert = document.getElementById('nameAlert');
-            let mailAlert = document.getElementById('mailAlert');
-            let subAlert = document.getElementById('subjectAlert');
-            let msgAlert = document.getElementById('messageAlert');
-            let review = document.getElementById('review');
-            let reMail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        let nameAlert = document.getElementById("nameAlert");
+        let mailAlert = document.getElementById("mailAlert");
+        let subjectAlert = document.getElementById("subjectAlert");
+        let messageAlert = document.getElementById("messageAlert");
 
-
-
-            if (!name || !subject || !mail || !message) {
-
-                alert("Fill All the fields");
+        let re = /^[A-Za-z0-9./_%]+@[A-Za-z0-9]+\.[A-Za-z]{2,}$/
+        
+        if(!name || !mail || !subject || !message){
+            alert("Fill all the fields");
+        }
+        else{
+            if(name.length<=2){
+                nameAlert.textContent="Name can't be this shorter";
+            }
+            else{
+                nameAlert.textContent="Looks Good ✔ ";
+                nameAlert.style.color="green";
 
             }
-            else {
-                if (name.length <= 2) {
-                    nameAlert.textContent = "Name can't be this shorter !!";
-                }
-                else {
-                    nameAlert.textContent = "";
-                }
-                if (reMail.test(mail) === false) {
-                    mailAlert.textContent = "Enter a valid mail id !!";
-                }
-                else {
-                    mailAlert.textContent = "";
-                }
-
-                if (subject.length < 15) {
-                    subAlert.textContent = "subject must contain atleast 15 characters !!";
-                }
-                else {
-                    subAlert.textContent = "";
-                }
-
-                if (message.length < 20) {
-                    msgAlert.textContent = "Message must contain atleast 20 characters !!";
-                }
-                else {
-                    msgAlert.textContent = "";
-                }
-
-                if ((reMail.test(mail) === true) && subject.length >= 15 && message.length >= 20) {
-                    alert("Form Submitted Successfully");
-                    clearAll();
-
-                }
+            if(re.test(mail)===false){
+                mailAlert.textContent="Enter a valid email id";
+            }
+            else{
+                mailAlert.textContent="Looks Good ✔";
+                mailAlert.style.color="green";
+            }
+            if(subject.length<5){
+                subjectAlert.textContent="Subject should have atleast 5 characters";
+            }
+            else{
+                subjectAlert.textContent="Looks Good ✔";
+                subjectAlert.style.color="green";
+            }
+            if(message.length<20){
+                messageAlert.textContent="Message should have atleast 20 Characters";
+            }
+            else{
+                messageAlert.textContent="Looks Good ✔";
+                nameAlert.style.color="green";
             }
 
+            if(name.length>=2 && re.test(mail)===true && subject.length>=5 && message.length>=20){
+                alert("Form Submitted Successfully ✅");
+                clearAll();
+            }
         }
 
-        function clearAll() {
-            document.getElementById('name').value = "";
-            document.getElementById('mail').value = "";
-            document.getElementById('subject').value = "";
-            document.getElementById('message').value = "";
-            document.getElementById('nameAlert').textContent = "";
-            document.getElementById('mailAlert').textContent = "";
-            document.getElementById('subjectAlert').textContent = "";
-            document.getElementById('messageAlert').textContent = "";
-        }
+       }
+
+       function clearAll(){
+        document.getElementById("name").value="";
+        document.getElementById("mail").value="";
+        document.getElementById("subject").value="";
+        document.getElementById("message").value="";
+        document.getElementById("nameAlert").textContent="";
+        document.getElementById("mailAlert").textContent="";
+        document.getElementById("subjectAlert").textContent="";
+        document.getElementById("messageAlert").textContent="";
+       }
     </script>
 </body>
 

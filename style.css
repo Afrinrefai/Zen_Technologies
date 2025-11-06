@@ -1,6 +1,7 @@
  body {
      text-align: justify;
      overflow-x: hidden;
+     text-align: justify;
  }
 
 
@@ -12,17 +13,16 @@
      align-items: center;
      background-image: url("asset/banner.png");
  }
+ h1{
+    text-align: center;
+    padding: 1rem;
+ }
 
  h2 {
      text-align: center;
      color: blue
  }
 
- .services {
-     display: flex;
-     justify-content: space-evenly;
-     height: 70vh;
- }
 
  footer {
      display: flex;
@@ -51,3 +51,41 @@
      width: 100%;
 
  }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .connect{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #contact{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        border: 1px solid blue;
+        border-radius: 10px;
+        box-shadow: 2px 2px 15px blue;
+    }
+    input,textarea{
+        width: 100%;
+    }
+
+    #contact p{
+        color: red;
+    }
+
+   .services .col{
+    display: flex;
+    justify-content: center;
+}
